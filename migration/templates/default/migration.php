@@ -22,9 +22,9 @@ class <?php echo $migrationClass; ?> extends <?php echo $this->baseClass."\n"; ?
         $this->createTable('<?php echo $tablePrefix.$tableName; ?>', array(
             <?php foreach($columns as $column): ?>
                 '<?php echo $column->name ?>' => '<?php echo $column->dbType ?>',
-            ));
             <?php endforeach ?>
-            <?php foreach($columns as $column): ?>
+));
+<?php foreach($columns as $column): ?>
             <?php if($column->isPrimaryKey): ?>
             $this->addPrimaryKey('<?php echo $tableName; ?>_pk','<?php echo $tableName; ?>','<?php echo $column->name ?>');
             <?php endif; ?>
